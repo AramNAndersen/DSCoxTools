@@ -1,7 +1,7 @@
 #'
 #' Cox forecasting glmnet with alpha cross-validation
 #'
-#' C-index testing of Cox partial likelihood glmnet models for survival forecasting from ex vivo drug screens. With CVA.
+#' C-index testing of Cox partial likelihood glmnet models for survival forecasting from ex vivo drug screens. With alpha cross-validation.
 #'
 #' @param X_data Input drug screen data
 #' @param y_data Survival data
@@ -648,7 +648,7 @@ Cox_forecasting_glmnet_combination <- function(X_data,
   return(list(C_index_results = df_C.index.alldata))
 }
 #'
-#' Cox glmnet model bootstrapping for survival association hypothesis testing
+#' Cox glmnet model bootstrapping for survival association statistics
 #'
 #' Survival association statistics.
 #'
@@ -1058,7 +1058,7 @@ Cox_forecasting_drug_withdrawal <- function(X_data,
 #'
 #' Cox forecasting glmnet, drug withdrawal testing
 #'
-#' C-index variable importance testing of Cox partial likelihood glmnet model for survival forecasting from ex vivo drug screens.
+#' C-index variable importance testing of Cox partial likelihood glmnet model for survival forecasting from ex vivo drug screens. Iterative model reduction by backward variable selection.
 #'
 #' @param X_data Input drug screen data
 #' @param y_data Survival data
