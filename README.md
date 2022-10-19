@@ -5,7 +5,7 @@ The package requires dplyr, reshape, doSNOW, glmnet and glmnetUtils.
 
 # Installation:
 ``` r
-devtools::install_github("Enserink-lab/metascreen",
+devtools::install_github("Enserink-lab/DSCoxTools",
                          ref="main")
 ``` 
 # Example:
