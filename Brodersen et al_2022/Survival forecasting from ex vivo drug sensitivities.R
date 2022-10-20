@@ -580,22 +580,6 @@ X_iter_final <- Results_Cox_model_reduction[[length(Results_Cox_model_reduction)
 
 list_X <- list(X_initial=X_initial,
                X_iter_final=X_iter_final)
-list_res_X_data <- list()
-for(m in names(list_X)){
-  X <- list_X[[m]]
-  list_res_X_data[[m]] <-  Cox_forecasting_glmnet_CVA(X_data=X,
-                                                      y_data=data.matrix(Y),
-                                                      alpha=0,
-                                                      lambda=c(exp(seq(-4,6, 0.1))),
-                                                      free_cores = 5,
-                                                      test.n= c(6,4),
-                                                      nfolds = nrow(Y),
-                                                      iter=200,
-                                                      log_AUC=2,
-                                                      Patient.Z=2,
-                                                      Drug.Z =2,
-                                                      RCPC=0)
-}
 
 
 list_res_X_boot_CV <- list()
@@ -606,7 +590,7 @@ for(m in names(list_X)){
                                                 alpha=0,
                                                 lambda=c(exp(seq(-4,6, 0.1))),
                                                 pre.CV=FALSE,
-                                                lambda_opt = list_res_X_data[[m]]$CVA_results$lambda[which.min(list_res_X_data[[m]]$CVA_results$cvm)],
+                                                lambda_opt = 0,
                                                 free_cores = 5,
                                                 iter=200,
                                                 log_AUC=2,
@@ -615,7 +599,7 @@ for(m in names(list_X)){
                                                 RCPC=0)
 }
 
-save(list_X, list_res_X_data, list_res_X_boot_CV,
+save(list_X, list_res_X_boot_CV,
      file = paste0(path,"/Results 20220711/Drug sensitivity model reduction X data bootstrapping and testing_20220722.RData"))
 
 #----Withdrawal and bootstrapping results----
