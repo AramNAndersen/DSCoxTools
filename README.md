@@ -1,5 +1,5 @@
 # DSCoxTools
-Repository of tools for testing and analysis of survival predictions from ex vivo drug screens using regularized Cox regression based on the Glmnet framework.
+Wrapper functions for testing and analysis of survival predictions from ex vivo drug screens using regularized Cox regression based on the Glmnet framework (https://glmnet.stanford.edu/).
 
 For usage and reference see https://doi.org/10.1101/2022.10.11.509866.
 
