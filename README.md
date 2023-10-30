@@ -34,3 +34,4 @@ list_Cox_testing <- Cox_forecasting_glmnet_CVA(X_data=X.AUC,
                                                RCPC=0:4)
                                                               
 ``` 
+Author: Aram N. Andersen 2022-2023
